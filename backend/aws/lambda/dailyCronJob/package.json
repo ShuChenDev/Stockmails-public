@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.mjs",
+  "license": "ISC",
+  "scripts": {
+    "generate": "prisma generate",
+    "build:emails": "npx esbuild emails/dailyemail.jsx --outfile=emails/dailyemail.js --format=esm --jsx=automatic",
+    "build": "npm run generate && npm run build:emails",
+    "start": "npm run build && node index.mjs",
+    "dev": "email dev"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/register": "^7.28.3",
+    "@prisma/client": "^6.14.0",
+    "@react-email/components": "^0.5.2",
+    "@react-email/tailwind": "^1.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "openai": "^4.0.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "resend": "^6.0.2",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.13",
+    "tw-animate-css": "^1.3.8"
+  },
+  "devDependencies": {
+    "@react-email/preview-server": "^4.2.8",
+    "esbuild": "^0.25.9",
+    "prisma": "^6.14.0",
+    "react-email": "4.2.8"
+  }
+}

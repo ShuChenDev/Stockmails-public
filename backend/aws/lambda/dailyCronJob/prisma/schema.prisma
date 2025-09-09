@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model subscription {
+  email     String   @id
+  services  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model newspaper {
+  date              DateTime @id
+  monetaryPrompt    String?
+  fiscalPrompt      String?
+  inflationPrompt   String?
+  tradePrompt       String?
+  geopoliticsPrompt String?
+
+  energyPrompt        String?
+  discretionaryPrompt String?
+  financialsPrompt    String?
+  utilityPrompt       String?
+  materialsPrompt     String?
+  staplesPrompt       String?
+  itPrompt            String?
+  realEstatePrompt    String?
+  industrialPrompt    String?
+  healthPrompt        String?
+  communicationPrompt String?
+
+  sp500Prompt String?
+  qqqPrompt   String?
+  djiPrompt   String?
+  aaplPrompt  String?
+  tslaPrompt  String?
+  btcPrompt   String?
+
+  monetaryResponse    String?
+  fiscalResponse      String?
+  inflationResponse   String?
+  tradeResponse       String?
+  geopoliticsResponse String?
+
+  energyResponse        String?
+  discretionaryResponse String?
+  financialsResponse    String?
+  utilityResponse       String?
+  materialsResponse     String?
+  staplesResponse       String?
+  itResponse            String?
+  realEstateResponse    String?
+  industrialResponse    String?
+  healthResponse        String?
+  communicationResponse String?
+
+  sp500Response String?
+  qqqResponse   String?
+  djiResponse   String?
+  aaplResponse  String?
+  tslaResponse  String?
+  btcResponse   String?
+}
